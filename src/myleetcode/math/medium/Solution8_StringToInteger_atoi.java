@@ -4,6 +4,7 @@ public class Solution8_StringToInteger_atoi {
 
 	public static void main(String[] args) {
 		int outcome = new Solution8_1().myAtoi("42");
+//		int outcome = new Solution8_2().myAtoi("4193 with words");
 		System.out.println("Outcome => " + outcome);
 	}
 
@@ -71,5 +72,25 @@ class Solution8_1 {
 		}
 		return sb;
 	}
+}
 
+// TODO: Need to fix "4193 with words"
+class Solution8_2 {
+	public int myAtoi(String str) {
+		if (str == null || str.length() == 0) {
+			return 0;
+		}
+		str = str.replaceAll("\\s", "");
+		if (!str.matches("[+-]?(?:\\d+(?:\\.\\d*)?|\\.\\d+)")) {
+			return 0;
+		}
+		double rst = Double.parseDouble(str);
+		if (rst > Integer.MAX_VALUE) {
+			return Integer.MAX_VALUE;
+		} else if (rst < Integer.MIN_VALUE) {
+			return Integer.MIN_VALUE;
+		} else {
+			return (int) rst;
+		}
+	}
 }
