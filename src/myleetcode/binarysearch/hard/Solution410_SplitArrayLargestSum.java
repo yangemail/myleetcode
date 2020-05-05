@@ -1,4 +1,4 @@
-package myleetcode.dichotomy.hard;
+package myleetcode.binarysearch.hard;
 
 public class Solution410_SplitArrayLargestSum {
 

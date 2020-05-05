@@ -1,4 +1,4 @@
-package myleetcode.dichotomy.easy;
+package myleetcode.binarysearch.easy;
 
 public class Solution69_SqrtX {
 
