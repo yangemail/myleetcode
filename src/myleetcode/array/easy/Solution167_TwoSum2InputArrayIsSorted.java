@@ -6,7 +6,6 @@ import java.util.Map;
 public class Solution167_TwoSum2InputArrayIsSorted {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 //		int[] numbers = {2,7,11,15}; 
 //		int target = 9;
 		
