@@ -17,6 +17,10 @@ public class Solution15_3Sum {
 
 class Solution15_1 {
 	public List<List<Integer>> threeSum(int[] nums) {
+		if(nums == null || nums.length < 3) {
+			return new LinkedList<List<Integer>>();
+		}
+		
 		Arrays.sort(nums);
 		// 使用Set为了结果去重，一定注意！！
 		Set<List<Integer>> triplets = new HashSet<>();
