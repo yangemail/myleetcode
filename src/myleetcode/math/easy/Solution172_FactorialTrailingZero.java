@@ -3,7 +3,7 @@ package myleetcode.math.easy;
 public class Solution172_FactorialTrailingZero {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		
 
 	}
 

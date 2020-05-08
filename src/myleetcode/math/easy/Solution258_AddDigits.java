@@ -3,7 +3,6 @@ package myleetcode.math.easy;
 public class Solution258_AddDigits {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		int result = new Solution258_2().addDigits(38);
 		System.out.println("Result => " + result);
 	}
