@@ -20,6 +20,6 @@ public class Solution989_AddToArrayFormOfInteger {
 
 class Solution989_1 {
 	public List<Integer> addToArrayForm(int[] A, int K) {
-		
+		return null;
 	}
 }
