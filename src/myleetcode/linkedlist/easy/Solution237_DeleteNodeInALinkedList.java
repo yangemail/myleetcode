@@ -10,7 +10,7 @@ public class Solution237_DeleteNodeInALinkedList {
 
 }
 
-class Solution {
+class Solution237_1 {
     public void deleteNode(ListNode node) {
         if(node == null || node.next == null) {
         	return;
