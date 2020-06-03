@@ -7,14 +7,14 @@ public class TreeNode {
 	public TreeNode left;
 	public TreeNode right;
 
-	TreeNode() {
+	public TreeNode() {
 	}
 
-	TreeNode(int val) {
+	public TreeNode(int val) {
 		this.val = val;
 	}
 
-	TreeNode(int val, TreeNode left, TreeNode right) {
+	public TreeNode(int val, TreeNode left, TreeNode right) {
 		this.val = val;
 		this.left = left;
 		this.right = right;
@@ -43,11 +43,11 @@ public class TreeNode {
 	        sb.append("\n");
 	 
 	        StringBuilder paddingBuilder = new StringBuilder(padding);
-	        paddingBuilder.append("©¦  ");
+	        paddingBuilder.append("ï¿½ï¿½  ");
 	 
 	        String paddingForBoth = paddingBuilder.toString();
-	        String pointerForRight = "©¸©¤©¤";
-	        String pointerForLeft = (node.right != null) ? "©À©¤©¤" : "©¸©¤©¤";
+	        String pointerForRight = "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";
+	        String pointerForLeft = (node.right != null) ? "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" : "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";
 	 
 	        traversePreOrder(sb, paddingForBoth, pointerForLeft, node.left);
 	        traversePreOrder(sb, paddingForBoth, pointerForRight, node.right);
