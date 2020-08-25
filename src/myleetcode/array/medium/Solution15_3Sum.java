@@ -22,20 +22,20 @@ class Solution15_1 {
 		}
 		
 		Arrays.sort(nums);
-		// 使用Set为了结果去重，一定注意！！
+		
+		int target = 0;
 		Set<List<Integer>> triplets = new HashSet<>();
 
-		int length = nums.length;
-		for (int i = 0; i < length; i++) {
+		for (int i = 0; i < nums.length; i++) {
 			int index1 = i + 1; // from i + 1, forward
-			int index2 = length - 1; // from length - 1, backward
+			int index2 = nums.length - 1; // from length - 1, backward
 			
 			while(index1 < index2) {
-				int twoSum = nums[i] + nums[index1];
+				int current = nums[i] + nums[index1] + nums[index2];
 				// start to validate 3 sum
-				if(twoSum + nums[index2] < 0) {
+				if(current < target) {
 					index1++;
-				} else if(twoSum + nums[index2] > 0) {
+				} else if(current > target) {
 					index2--;
 				} else {
 					List<Integer> triplet = new ArrayList<>();

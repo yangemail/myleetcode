@@ -1,9 +1,24 @@
 package myleetcode.binarysearch.easy;
 
+/**
+ * 35. Search Insert Position Given a sorted array and a target value, return
+ * the index if the target is found. If not, return the index where it would be
+ * if it were inserted in order. You may assume no duplicates in the array.
+ *
+ */
 public class Solution35_SearchInsertPosition {
 
 	public static void main(String[] args) {
-
+		Solution35_2 obj = new Solution35_2();
+		int[] nums = new int[] { 1, 3, 5, 6 };
+		int result = obj.searchInsert(nums, 5);
+		System.out.println("Result -> " + result);
+		result = obj.searchInsert(nums, 2);
+		System.out.println("Result -> " + result);
+		result = obj.searchInsert(nums, 7);
+		System.out.println("Result -> " + result);
+		result = obj.searchInsert(nums, 0);
+		System.out.println("Result -> " + result);
 	}
 
 }
@@ -32,29 +47,17 @@ class Solution35_1 {
 
 class Solution35_2 {
 	public int searchInsert(int[] nums, int target) {
-		if (nums == null || nums.length == 0) {
-			return 0;
-		}
-
-		int start = 0;
-		int end = nums.length - 1;
-		while (start + 1 < end) {
-			int mid = start + (end - start) / 2;
-			if (nums[mid] == target) {
-				return mid;
-			} else if (nums[mid] < target) {
-				start = mid;
+		if (nums == null || nums.length == 0)
+			return -1;
+		int left = 0, right = nums.length;
+		while (left < right) {
+			int mid = left + (right - left) / 2;
+			if (nums[mid] < target) {
+				left = mid + 1;
 			} else {
-				end = mid;
+				right = mid;
 			}
 		}
-
-		if (target <= nums[start]) {
-			return start;
-		} else if (target <= nums[end]) {
-			return end;
-		} else {
-			return end + 1;
-		}
+		return right;
 	}
 }

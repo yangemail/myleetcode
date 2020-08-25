@@ -18,6 +18,8 @@ public class Solution18_4Sum {
 
 class Solution18_1 {
     public List<List<Integer>> fourSum(int[] nums, int target) {
+    	// Refer to 3Sum
+    	
         if(nums == null || nums.length < 4) {
         	return new LinkedList<List<Integer>>();
         }
@@ -43,7 +45,9 @@ class Solution18_1 {
         				quadruplet.add(nums[j]);
         				quadruplet.add(nums[index1]);
         				quadruplet.add(nums[index2]);
+        				
         				quadruplets.add(quadruplet);
+        				
         				index1++;
         				index2--;
         			}

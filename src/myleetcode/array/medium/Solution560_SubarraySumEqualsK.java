@@ -18,13 +18,13 @@ public class Solution560_SubarraySumEqualsK {
  * TODO: Need to review.
  * #### Method1: Hash Table to sture presum (like in 2 sum problem)
 - Approach#4 of https://leetcode.com/problems/subarray-sum-equals-k/solution/
-- Hash Table two sum 思想, but to save frequency of current sum: `preSumCount<sum, count>`
-    - for loop 从左开始积累 `preSumCount<sum, count>`
-    - derive `priorSum = sum - k`: 看看前面有多少此种sum, `preSumCount.get(priorSum)`
+- Hash Table two sum 思锟斤拷, but to save frequency of current sum: `preSumCount<sum, count>`
+    - for loop 锟斤拷锟斤拷始锟斤拷锟斤拷 `preSumCount<sum, count>`
+    - derive `priorSum = sum - k`: 锟斤拷锟斤拷前锟斤拷锟叫讹拷锟劫达拷锟斤拷sum, `preSumCount.get(priorSum)`
         - `# ways to reach priorSum` gives # of ways for that `priorSum + k = curr Sum`
         - therefore, count += preSumCount.get(priorSum)
 - O(n) time, O(n) space
-- Note: 如果需要实际index, 可以存 `Map<Integer, List<Index>>`
+- Note: 锟斤拷锟斤拷锟揭碉拷锟絠ndex, 锟斤拷锟皆达拷 `Map<Integer, List<Index>>`
  *
  */
 class Solution560_1 {
@@ -33,7 +33,6 @@ class Solution560_1 {
 			return 0;
 
 		Map<Integer /* sum */, Integer /* count */> preSumCount = new HashMap<>();
-//		int n = nums.length;
 		int sum = 0;
 		int count = 0;
 
