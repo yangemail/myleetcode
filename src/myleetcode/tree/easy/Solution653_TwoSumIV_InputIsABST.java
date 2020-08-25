@@ -28,14 +28,34 @@ class Solution653_1 {
 		if (root == null)
 			return false;
 
-		// 注意：这里必须验证当前值在不在set中，而不是验证减去之后的值！！
+		// Validate the root.val, not the minus value
 		if (set.contains(root.val))
 			return true;
 
+		// Set the minus value to container
 		int minus = k - root.val;
 		set.add(minus);
 
 		return twoSum(root.left, set, k) || twoSum(root.right, set, k);
 	}
+}
 
+class Solution653_2 {
+    public boolean findTarget(TreeNode root, int k) {
+        Set<Integer/* value of minus */> set = new HashSet<Integer>();
+        return twoSum(root, k, set);
+    }
+    
+    public boolean twoSum(TreeNode root, int k, Set<Integer> set) {
+    	if(root == null) {
+    		return false;
+    	}
+    	if(set.contains(root.val)) {
+    		return true;
+    	}
+    	int minus = k - root.val;
+    	set.add(minus);
+    	return twoSum(root.left, k, set) || twoSum(root.right, k, set);
+    }
+    
 }
